@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/css/add-product.css">
+   <!-- path should be assuming we are already looking in 'public' folder -->
+  
+</head>
+<body>
+   <header>
+       <nav>
+           <ul>
+               <li><a href="/shop">Shop</a></li>
+               <li><a href="/admin/add-product">Add Product</a></li>
+           </ul>
+       </nav>
+   </header>
+
+   <main>
+    <form action="/admin/add-product" method="POST">
+        <input type="text" name="title">
+        <button type="submit">Submit</button>
+    </form>
+   </main>
+   
+   <footer>
+    <p>&copy; 2024 My Shop</p>
+</footer>
+
+<link rel="stylesheet" href="/css/shop.css">
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+   <main>
+    <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
+        <input type="text" name="title" id="title" value="<%= editing ? product.title : '' %>">
+        <input type="datetime-local" name="date" id="date" value="<%= editing && product.date ? new Date(product.date + ' UTC').toISOString().slice(0, 16) : '' %>">
+
+        <% if (editing) { %>
+            <input type="hidden" value="<%= product._id %>" name="productId">
+        <% } %>
+        <button class="submit" type="submit"><% if (editing) { %>Update Item<% } else { %>Add Item<% } %></button>
+
+       
+    </form>
+   </main>
+
+  
+   
+   
+   <%- include('./partials/footer.ejs') %>
+<link rel="stylesheet" href="/css/shop.css">
+</body>
+</html>
